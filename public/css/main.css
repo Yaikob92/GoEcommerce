@@ -14,29 +14,41 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Quicksand",  sans-serif;
-  --nav-font: "Ubuntu",  sans-serif;
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Quicksand", sans-serif;
+  --nav-font: "Ubuntu", sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #212529; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #3e0925; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #8c0d4f; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+:root {
+  --background-color: #ffffff;
+  /* Background color for the entire website, including individual sections */
+  --default-color: #212529;
+  /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #3e0925;
+  /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #8c0d4f;
+  /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #ffffff;
+  /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #ffffff;
+  /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #212529;  /* The default color of the main navmenu links */
-  --nav-hover-color: #8c0d4f; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #8c0d4f; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-color: #212529;
+  /* The default color of the main navmenu links */
+  --nav-hover-color: #8c0d4f;
+  /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #ffffff;
+  /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #ffffff;
+  /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #212529;
+  /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #8c0d4f;
+  /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -8739,146 +8751,338 @@ section,
 /*--------------------------------------------------------------
 # About 2 Section
 --------------------------------------------------------------*/
-.about-2 .small-title {
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: var(--accent-color);
+.page-title {
+  padding: 20px 0;
+  background-color: var(--surface-color, #f8fafc);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.about-2 .about-title {
-  font-size: 2.2rem;
-  margin: 0 0 1rem 0;
+.page-title h1 {
+  font-size: 1.5rem;
   font-weight: 700;
-  line-height: 1.2;
+  color: var(--heading-color, #0f172a);
+  margin: 0;
+}
+
+.page-title .breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.page-title .breadcrumbs ol li+li::before {
+  display: inline-block;
+  padding-right: 8px;
+  padding-left: 8px;
+  color: #94a3b8;
+  content: "/";
+}
+
+.page-title .breadcrumbs ol li a {
+  color: var(--accent-color, #0d9488);
+  text-decoration: none;
+}
+
+.page-title .breadcrumbs ol li.current {
+  color: #64748b;
+}
+
+.about-2 {
+  padding: 60px 0;
+}
+
+.about-2 .intro-block {
+  padding-right: 15px;
+}
+
+.about-2 .label-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: color-mix(in srgb, var(--accent-color, #0d9488), transparent 88%);
+  color: var(--accent-color, #0d9488);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 50px;
+  margin-bottom: 18px;
+}
+
+.about-2 .section-heading {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--heading-color, #0f172a);
+  line-height: 1.25;
+  margin-bottom: 18px;
+  letter-spacing: -0.5px;
 }
 
 @media (max-width: 992px) {
-  .about-2 .about-title {
-    font-size: 1.6rem;
+  .about-2 .section-heading {
+    font-size: 1.75rem;
   }
 }
 
-.about-2 .about-description {
-  color: color-mix(in srgb, var(--default-color), transparent 25%);
-  font-size: 1.125rem;
-  line-height: 1.6;
+.about-2 .section-desc {
+  color: #64748b;
+  font-size: 0.975rem;
+  line-height: 1.65;
+  margin-bottom: 28px;
 }
 
-@media (min-width: 992px) {
-  .about-2 .description-wrapper {
-    border-left: 1px solid var(--accent-color);
-    padding-left: 30px;
-  }
-}
-
-.about-2 .content-card {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.about-2 .content-card .card-image {
-  margin-bottom: 1.5rem;
-  overflow: hidden;
-  border-radius: 12px;
-}
-
-.about-2 .content-card .card-image img {
-  transition: transform 0.5s ease;
-}
-
-.about-2 .content-card .card-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.about-2 .content-card .card-content h3 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
-}
-
-.about-2 .content-card .card-content p {
-  color: color-mix(in srgb, var(--default-color), transparent 25%);
-  margin-bottom: 1.5rem;
-  flex: 1;
-}
-
-.about-2 .content-card .card-content .read-more {
-  font-weight: 500;
+.about-2 .btn-primary-action {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 8px;
+  background-color: var(--accent-color, #0d9488);
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-.about-2 .content-card .card-content .read-more:hover {
-  gap: 0.75rem;
+.about-2 .btn-primary-action:hover {
+  background-color: color-mix(in srgb, var(--accent-color, #0d9488), #000 15%);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--accent-color, #0d9488), transparent 75%);
 }
 
-.about-2 .content-card .card-content .read-more:hover i {
-  transform: translateX(5px);
+.about-2 .video-card {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
-.about-2 .content-card .card-content .read-more i {
-  transition: transform 0.3s ease;
+.about-2 .video-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  object-fit: cover;
 }
 
-.about-2 .content-card:hover .card-image img {
-  transform: scale(1.05);
+.about-2 .video-card .video-trigger {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 58px;
+  height: 58px;
+  background-color: var(--accent-color, #0d9488);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent-color, #0d9488), transparent 75%);
+}
+
+.about-2 .video-card .video-trigger:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 0 0 12px color-mix(in srgb, var(--accent-color, #0d9488), transparent 60%);
+}
+
+.about-2 .supporting-text {
+  color: #64748b;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.about-2 .feature-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.about-2 .feature-card:hover {
+  border-color: color-mix(in srgb, var(--accent-color, #0d9488), transparent 60%);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transform: translateY(-3px);
+}
+
+.about-2 .feature-card .feature-icon {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  background-color: color-mix(in srgb, var(--accent-color, #0d9488), transparent 90%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-2 .feature-card .feature-icon i {
+  font-size: 22px;
+  color: var(--accent-color, #0d9488);
+}
+
+.about-2 .feature-card .feature-content h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--heading-color, #0f172a);
+  margin-bottom: 6px;
+}
+
+.about-2 .feature-card .feature-content h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.about-2 .feature-card .feature-content p {
+  color: #64748b;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0;
 }
 
 /*--------------------------------------------------------------
 # Stats Section
 --------------------------------------------------------------*/
-.stats .stats-item {
-  padding: 30px;
-  width: 100%;
+.stats {
+  padding: 50px 0;
 }
 
-.stats .stats-item i {
-  color: var(--accent-color);
-  display: block;
-  font-size: 44px;
-  float: left;
-  line-height: 0;
+.stats .metric-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
 }
 
-.stats .stats-item .purecounter {
-  color: var(--heading-color);
-  font-size: 48px;
-  line-height: 40px;
+.stats .metric-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+.stats .metric-icon {
+  width: 54px;
+  height: 54px;
+  min-width: 54px;
+  background-color: color-mix(in srgb, var(--accent-color, #0d9488), transparent 90%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stats .metric-icon i {
+  font-size: 26px;
+  color: var(--accent-color, #0d9488);
+}
+
+.stats .metric-value {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--heading-color, #0f172a);
   display: block;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stats .metric-label {
+  font-size: 1.05rem;
   font-weight: 700;
-  margin-left: 60px;
+  color: var(--heading-color, #0f172a);
+  margin-bottom: 2px;
 }
 
-.stats .stats-item p {
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  padding: 15px 0 0 0;
-  margin: 0 0 0 60px;
-  font-family: var(--heading-font);
-  font-size: 14px;
+.stats .metric-desc {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
 }
 
 /*--------------------------------------------------------------
 # Testimonials Section
 --------------------------------------------------------------*/
-.testimonials .testimonials-slider {
-  width: 100%;
-  position: relative;
-  padding-bottom: 60px;
+.testimonials {
+  padding: 60px 0;
 }
 
-.testimonials .swiper-wrapper {
-  height: auto;
+.testimonials .review-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 26px;
+  border: 1px solid #e2e8f0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
 }
 
-.testimonials .testimonial-item {
-  background-color: var(--surface-color);
-  padding: 40px;
-  border-radius: 20px;
+.testimonials .review-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+.testimonials .review-card.featured {
+  border-color: var(--accent-color, #0d9488);
+}
+
+.testimonials .star-group {
+  color: #f59e0b;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  display: flex;
+  gap: 3px;
+}
+
+.testimonials .review-body p {
+  font-size: 0.95rem;
+  color: #334155;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.testimonials .review-footer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.testimonials .review-footer img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonials .reviewer-info h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--heading-color, #0f172a);
+  margin: 0 0 2px 0;
+}
+
+.testimonials .reviewer-info span {
+  font-size: 0.825rem;
+  color: #64748b;
 }
 
 @media (max-width: 575px) {

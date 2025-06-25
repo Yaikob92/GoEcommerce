@@ -2,8 +2,19 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function Navbar() {
+  const { user, isAuthenticated, logout } = useAuth();
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    await logout();
+    router.push("/login");
+  };
+
   return (
     <header id="header" className="header position-relative">
       {/* Top Bar */}
@@ -15,11 +26,11 @@ export default function Navbar() {
                 <div className="top-bar-item me-4">
                   <i className="bi bi-telephone-fill me-2"></i>
                   <span>Customer Support: </span>
-                  <a href="tel:+1234567890">+1 (234) 567-890</a>
+                  <a href="tel:+251936144979">(+251) 936144979</a>
                 </div>
                 <div className="top-bar-item">
                   <i className="bi bi-envelope-fill me-2"></i>
-                  <a href="mailto:support@example.com">support@example.com</a>
+                  <a href="mailto:wyaikobli@gmail.com">wyaikobli@gmail.com</a>
                 </div>
               </div>
             </div>
@@ -42,31 +53,19 @@ export default function Navbar() {
                       </a>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">Español</a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">Français</a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">Deutsch</a>
+                      <a className="dropdown-item" href="#">Amharic (አማርኛ)</a>
                     </li>
                   </ul>
                 </div>
                 <div className="top-bar-item dropdown">
                   <a href="#" className="dropdown-toggle" data-bs-toggle="dropdown">
-                    <i className="bi bi-currency-dollar me-2"></i>USD
+                    <i className="bi bi-cash-stack me-2"></i>ETB
                   </a>
                   <ul className="dropdown-menu">
                     <li>
                       <a className="dropdown-item" href="#">
-                        <i className="bi bi-check2 me-2 selected-icon"></i>USD
+                        <i className="bi bi-check2 me-2 selected-icon"></i>ETB (Ethiopian Birr)
                       </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">EUR</a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">GBP</a>
                     </li>
                   </ul>
                 </div>
@@ -116,88 +115,94 @@ export default function Navbar() {
                 <i className="bi bi-search"></i>
               </button>
 
-              {/* Account */}
-              <div className="dropdown account-dropdown">
-                <button className="header-action-btn" data-bs-toggle="dropdown">
-                  <i className="bi bi-person"></i>
-                  <span className="action-text d-none d-md-inline-block">
-                    Account
-                  </span>
-                </button>
-                <div className="dropdown-menu">
-                  <div className="dropdown-header">
-                    <h6>
-                      Welcome to <span className="sitename">User</span>
-                    </h6>
-                    <p className="mb-0">Access account &amp; manage orders</p>
+              {isAuthenticated ? (
+                <>
+                  {/* Account */}
+                  <div className="dropdown account-dropdown">
+                    <button className="header-action-btn" data-bs-toggle="dropdown">
+                      <i className="bi bi-person"></i>
+                      <span className="action-text d-none d-md-inline-block">
+                        {user?.first_name || "Account"}
+                      </span>
+                    </button>
+                    <div className="dropdown-menu">
+                      <div className="dropdown-header">
+                        <h6>
+                          Welcome, <span className="sitename">{user?.first_name}</span>
+                        </h6>
+                        <p className="mb-0">Manage your account &amp; orders</p>
+                      </div>
+                      <div className="dropdown-body">
+                        <Link
+                          className="dropdown-item d-flex align-items-center"
+                          href="/account"
+                        >
+                          <i className="bi bi-person-circle me-2"></i>
+                          <span>My Profile</span>
+                        </Link>
+                        <Link
+                          className="dropdown-item d-flex align-items-center"
+                          href="/account"
+                        >
+                          <i className="bi bi-bag-check me-2"></i>
+                          <span>My Orders</span>
+                        </Link>
+                        <Link
+                          className="dropdown-item d-flex align-items-center"
+                          href="/account"
+                        >
+                          <i className="bi bi-heart me-2"></i>
+                          <span>My Wishlist</span>
+                        </Link>
+                        <Link
+                          className="dropdown-item d-flex align-items-center"
+                          href="/account"
+                        >
+                          <i className="bi bi-gear me-2"></i>
+                          <span>Settings</span>
+                        </Link>
+                      </div>
+                      <div className="dropdown-footer">
+                        <button
+                          className="btn btn-outline-primary w-100"
+                          onClick={handleLogout}
+                        >
+                          <i className="bi bi-box-arrow-right me-2"></i>
+                          Sign Out
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                  <div className="dropdown-body">
-                    <Link
-                      className="dropdown-item d-flex align-items-center"
-                      href="/account"
-                    >
-                      <i className="bi bi-person-circle me-2"></i>
-                      <span>My Profile</span>
-                    </Link>
-                    <Link
-                      className="dropdown-item d-flex align-items-center"
-                      href="/account"
-                    >
-                      <i className="bi bi-bag-check me-2"></i>
-                      <span>My Orders</span>
-                    </Link>
-                    <Link
-                      className="dropdown-item d-flex align-items-center"
-                      href="/account"
-                    >
-                      <i className="bi bi-heart me-2"></i>
-                      <span>My Wishlist</span>
-                    </Link>
-                    <Link
-                      className="dropdown-item d-flex align-items-center"
-                      href="/return-policy"
-                    >
-                      <i className="bi bi-arrow-return-left me-2"></i>
-                      <span>Returns &amp; Refunds</span>
-                    </Link>
-                    <Link
-                      className="dropdown-item d-flex align-items-center"
-                      href="/account"
-                    >
-                      <i className="bi bi-gear me-2"></i>
-                      <span>Settings</span>
-                    </Link>
-                  </div>
-                  <div className="dropdown-footer">
-                    <a href="/login" className="btn btn-primary w-100 mb-2">
-                      Sign In
-                    </a>
-                    <a href="/register" className="btn btn-outline-primary w-100">
-                      Register
-                    </a>
-                  </div>
-                </div>
-              </div>
 
-              {/* Wishlist */}
-              <Link href="/account" className="header-action-btn d-none d-md-flex">
-                <i className="bi bi-heart"></i>
-                <span className="action-text d-none d-md-inline-block">
-                  Wishlist
-                </span>
-                <span className="badge">0</span>
-              </Link>
+                  {/* Wishlist */}
+                  <Link href="/account" className="header-action-btn d-none d-md-flex">
+                    <i className="bi bi-heart"></i>
+                    <span className="action-text d-none d-md-inline-block">
+                      Wishlist
+                    </span>
+                    <span className="badge">0</span>
+                  </Link>
 
-              {/* Cart */}
-              <div className="dropdown cart-dropdown">
-                <Link href="/cart" className="header-action-btn">
-                  <i className="bi bi-cart3"></i>
-                  <span className="action-text d-none d-md-inline-block">
-                    Cart
-                  </span>
-                  <span className="badge">0</span>
+                  {/* Cart */}
+                  <div className="dropdown cart-dropdown">
+                    <Link href="/cart" className="header-action-btn">
+                      <i className="bi bi-cart3"></i>
+                      <span className="action-text d-none d-md-inline-block">
+                        Cart
+                      </span>
+                      <span className="badge">0</span>
+                    </Link>
+                  </div>
+                </>
+              ) : (
+                <Link
+                  href="/login"
+                  className="btn btn-primary px-4 py-2 text-nowrap rounded-pill fw-semibold ms-2"
+                  style={{ backgroundColor: "#8c0d4f", borderColor: "#8c0d4f" }}
+                >
+                  Get Started
                 </Link>
-              </div>
+              )}
 
               {/* Mobile Navigation Toggle */}
               <i className="mobile-nav-toggle d-xl-none bi bi-list me-0"></i>
@@ -212,21 +217,29 @@ export default function Navbar() {
           <nav id="navmenu" className="navmenu">
             <ul>
               <li>
-                <Link href="/" className="active">
+                <Link href="/" className={pathname === "/" ? "active" : ""}>
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/about">About</Link>
+                <Link href="/about" className={pathname === "/about" ? "active" : ""}>
+                  About
+                </Link>
               </li>
               <li>
-                <Link href="/store">Store</Link>
+                <Link href="/store" className={pathname === "/store" ? "active" : ""}>
+                  Store
+                </Link>
               </li>
               <li>
-                <Link href="/cart">Cart</Link>
+                <Link href="/cart" className={pathname === "/cart" ? "active" : ""}>
+                  Cart
+                </Link>
               </li>
               <li>
-                <Link href="/checkout">Checkout</Link>
+                <Link href="/checkout" className={pathname === "/checkout" ? "active" : ""}>
+                  Checkout
+                </Link>
               </li>
               <li className="dropdown">
                 <a href="#">
@@ -472,7 +485,7 @@ export default function Navbar() {
                           </div>
                           <div className="product-info">
                             <h5>Premium Headphones</h5>
-                            <p className="price">$129.99</p>
+                            <p className="price">ETB 129.99</p>
                             <a href="#" className="btn-view">
                               View Product
                             </a>
@@ -489,7 +502,7 @@ export default function Navbar() {
                           </div>
                           <div className="product-info">
                             <h5>Smart Watch</h5>
-                            <p className="price">$199.99</p>
+                            <p className="price">ETB 199.99</p>
                             <a href="#" className="btn-view">
                               View Product
                             </a>
@@ -506,7 +519,7 @@ export default function Navbar() {
                           </div>
                           <div className="product-info">
                             <h5>Wireless Earbuds</h5>
-                            <p className="price">$89.99</p>
+                            <p className="price">ETB 89.99</p>
                             <a href="#" className="btn-view">
                               View Product
                             </a>
@@ -523,7 +536,7 @@ export default function Navbar() {
                           </div>
                           <div className="product-info">
                             <h5>Bluetooth Speaker</h5>
-                            <p className="price">$79.99</p>
+                            <p className="price">ETB 79.99</p>
                             <a href="#" className="btn-view">
                               View Product
                             </a>
@@ -552,7 +565,7 @@ export default function Navbar() {
                           </div>
                           <div className="product-info">
                             <h5>Fitness Tracker</h5>
-                            <p className="price">$69.99</p>
+                            <p className="price">ETB 69.99</p>
                             <a href="#" className="btn-view">
                               View Product
                             </a>
@@ -570,7 +583,7 @@ export default function Navbar() {
                           </div>
                           <div className="product-info">
                             <h5>Wireless Charger</h5>
-                            <p className="price">$39.99</p>
+                            <p className="price">ETB 39.99</p>
                             <a href="#" className="btn-view">
                               View Product
                             </a>
@@ -588,7 +601,7 @@ export default function Navbar() {
                           </div>
                           <div className="product-info">
                             <h5>Smart Bulb Set</h5>
-                            <p className="price">$49.99</p>
+                            <p className="price">ETB 49.99</p>
                             <a href="#" className="btn-view">
                               View Product
                             </a>
@@ -606,7 +619,7 @@ export default function Navbar() {
                           </div>
                           <div className="product-info">
                             <h5>Portable Power Bank</h5>
-                            <p className="price">$59.99</p>
+                            <p className="price">ETB 59.99</p>
                             <a href="#" className="btn-view">
                               View Product
                             </a>
@@ -636,7 +649,7 @@ export default function Navbar() {
                           <div className="product-info">
                             <h5>Wireless Keyboard</h5>
                             <p className="price">
-                              <span className="original-price">$89.99</span> $62.99
+                              <span className="original-price">ETB 89.99</span> ETB 62.99
                             </p>
                             <a href="#" className="btn-view">
                               View Product
@@ -656,7 +669,7 @@ export default function Navbar() {
                           <div className="product-info">
                             <h5>Gaming Mouse</h5>
                             <p className="price">
-                              <span className="original-price">$59.99</span> $44.99
+                              <span className="original-price">ETB 59.99</span> ETB 44.99
                             </p>
                             <a href="#" className="btn-view">
                               View Product
@@ -676,7 +689,7 @@ export default function Navbar() {
                           <div className="product-info">
                             <h5>Desk Lamp</h5>
                             <p className="price">
-                              <span className="original-price">$49.99</span> $29.99
+                              <span className="original-price">ETB 49.99</span> ETB 29.99
                             </p>
                             <a href="#" className="btn-view">
                               View Product
@@ -696,7 +709,7 @@ export default function Navbar() {
                           <div className="product-info">
                             <h5>USB-C Hub</h5>
                             <p className="price">
-                              <span className="original-price">$39.99</span> $31.99
+                              <span className="original-price">ETB 39.99</span> ETB 31.99
                             </p>
                             <a href="#" className="btn-view">
                               View Product
@@ -1263,7 +1276,7 @@ export default function Navbar() {
             />
             <div className="swiper-wrapper">
               <div className="swiper-slide">
-                🚚 Free shipping on orders over $50
+                🚚 Free shipping on orders over ETB 50
               </div>
               <div className="swiper-slide">
                 💰 30 days money back guarantee

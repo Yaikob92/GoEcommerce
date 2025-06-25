@@ -105,11 +105,11 @@ export default function Footer() {
                   </div>
                   <div className="contact-item">
                     <i className="bi bi-telephone"></i>
-                    <span>+1 (555) 123-4567</span>
+                    <span>(+251) 936144979</span>
                   </div>
                   <div className="contact-item">
                     <i className="bi bi-envelope"></i>
-                    <span>hello@example.com</span>
+                    <span>wyaikobli@gmail.com</span>
                   </div>
                   <div className="contact-item">
                     <i className="bi bi-clock"></i>

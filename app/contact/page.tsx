@@ -54,7 +54,7 @@ export default function ContactPage() {
                 <i className="bi bi-telephone flex-shrink-0"></i>
                 <div>
                   <h3>Call Us</h3>
-                  <p>+1 5589 55488 55</p>
+                  <p>(+251) 936144979</p>
                 </div>
               </div>
 
@@ -66,7 +66,7 @@ export default function ContactPage() {
                 <i className="bi bi-envelope flex-shrink-0"></i>
                 <div>
                   <h3>Email Us</h3>
-                  <p>info@example.com</p>
+                  <p>wyaikobli@gmail.com</p>
                 </div>
               </div>
             </div>
