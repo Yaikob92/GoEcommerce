@@ -123,7 +123,7 @@ export default function SearchPage() {
                     <Link href="/product">Tempor Incididunt</Link>
                   </h4>
                   <div className="product-meta">
-                    <div className="product-price">$129.00</div>
+                    <div className="product-price">ETB 129.00</div>
                     <div className="product-rating">
                       <i className="bi bi-star-fill"></i>
                       4.8 <span>(42)</span>
@@ -175,7 +175,7 @@ export default function SearchPage() {
                     <Link href="/product">Elit Consectetur</Link>
                   </h4>
                   <div className="product-meta">
-                    <div className="product-price">$95.00</div>
+                    <div className="product-price">ETB 95.00</div>
                     <div className="product-rating">
                       <i className="bi bi-star-fill"></i>
                       4.6 <span>(28)</span>
@@ -228,8 +228,8 @@ export default function SearchPage() {
                   </h4>
                   <div className="product-meta">
                     <div className="product-price">
-                      $75.00
-                      <span className="original-price">$99.00</span>
+                      ETB 75.00
+                      <span className="original-price">ETB 99.00</span>
                     </div>
                     <div className="product-rating">
                       <i className="bi bi-star-fill"></i>
@@ -281,7 +281,7 @@ export default function SearchPage() {
                     <Link href="/product">Labore Dolore</Link>
                   </h4>
                   <div className="product-meta">
-                    <div className="product-price">$145.00</div>
+                    <div className="product-price">ETB 145.00</div>
                     <div className="product-rating">
                       <i className="bi bi-star-fill"></i>
                       4.7 <span>(35)</span>
@@ -332,7 +332,7 @@ export default function SearchPage() {
                     <Link href="/product">Magna Aliqua</Link>
                   </h4>
                   <div className="product-meta">
-                    <div className="product-price">$89.00</div>
+                    <div className="product-price">ETB 89.00</div>
                     <div className="product-rating">
                       <i className="bi bi-star-fill"></i>
                       4.5 <span>(23)</span>
@@ -385,8 +385,8 @@ export default function SearchPage() {
                   </h4>
                   <div className="product-meta">
                     <div className="product-price">
-                      $110.00
-                      <span className="original-price">$129.00</span>
+                      ETB 110.00
+                      <span className="original-price">ETB 129.00</span>
                     </div>
                     <div className="product-rating">
                       <i className="bi bi-star-fill"></i>
@@ -438,7 +438,7 @@ export default function SearchPage() {
                     <Link href="/product">Incididunt Labore</Link>
                   </h4>
                   <div className="product-meta">
-                    <div className="product-price">$55.00</div>
+                    <div className="product-price">ETB 55.00</div>
                     <div className="product-rating">
                       <i className="bi bi-star-fill"></i>
                       4.6 <span>(31)</span>
@@ -490,7 +490,7 @@ export default function SearchPage() {
                     <Link href="/product">Aliqua Magna</Link>
                   </h4>
                   <div className="product-meta">
-                    <div className="product-price">$79.00</div>
+                    <div className="product-price">ETB 79.00</div>
                     <div className="product-rating">
                       <i className="bi bi-star-fill"></i>
                       4.7 <span>(39)</span>

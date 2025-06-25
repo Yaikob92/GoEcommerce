@@ -3,6 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 import Styles from "./styles";
 import ConditionalLayout from "@/components/ConditionalLayout";
+import { AuthProvider } from "@/contexts/AuthContext";
 
 export const metadata: Metadata = {
   title: "FashionStore - Fashion E-Commerce",
@@ -18,7 +19,9 @@ export default function RootLayout({
     <html lang="en" data-scroll-behavior="smooth">
       <body>
         <Styles />
-        <ConditionalLayout>{children}</ConditionalLayout>
+        <AuthProvider>
+          <ConditionalLayout>{children}</ConditionalLayout>
+        </AuthProvider>
 
         <a href="#" id="scroll-top" className="scroll-top d-flex align-items-center justify-content-center"><i className="bi bi-arrow-up-short"></i></a>
 

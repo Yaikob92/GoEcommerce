@@ -180,7 +180,7 @@ export default function AdminDashboardPage() {
                       <tr key={order.id}>
                         <td style={{ fontWeight: 500 }}>#{order.order_number}</td>
                         <td>{order.customer_name}</td>
-                        <td style={{ fontWeight: 600 }}>${order.total?.toLocaleString()}</td>
+                        <td style={{ fontWeight: 600 }}>ETB ${order.total?.toLocaleString()}</td>
                         <td>{getStatusBadge(order.status)}</td>
                         <td style={{ color: "#64748b", fontSize: 13 }}>
                           {new Date(order.created_at).toLocaleDateString()}
@@ -258,7 +258,7 @@ export default function AdminDashboardPage() {
                           </div>
                         </td>
                         <td>{product.stock}</td>
-                        <td style={{ fontWeight: 500 }}>${product.price?.toLocaleString()}</td>
+                        <td style={{ fontWeight: 500 }}>ETB ${product.price?.toLocaleString()}</td>
                         <td>{getStatusBadge(product.stock === 0 ? "out_of_stock" : product.stock <= 5 ? "low_stock" : "in_stock")}</td>
                       </tr>
                     ))}

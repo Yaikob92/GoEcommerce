@@ -1,6 +1,31 @@
+"use client";
+
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function AccountPage() {
+  const { user, isAuthenticated, isLoading, logout } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!isLoading && !isAuthenticated) {
+      router.push("/login");
+    }
+  }, [isAuthenticated, isLoading, router]);
+
+  const handleLogout = async () => {
+    await logout();
+    router.push("/");
+  };
+
+  if (isLoading) return null;
+
+  if (!isAuthenticated || !user) return null;
+
+  const userInitial = user.first_name?.[0]?.toUpperCase() || "U";
+
   return (
     <>
       {/* Page Title */}
@@ -46,13 +71,13 @@ export default function AccountPage() {
             >
               <div className="profile-header">
                 <div className="profile-avatar">
-                  <span>S</span>
+                  <span>{userInitial}</span>
                 </div>
                 <div className="profile-info">
-                  <h4>Sarah Anderson</h4>
+                  <h4>{user.first_name} {user.last_name}</h4>
                   <div className="profile-bonus">
-                    <i className="bi bi-gift"></i>
-                    <span>100 bonuses available</span>
+                    <i className="bi bi-envelope"></i>
+                    <span>{user.email}</span>
                   </div>
                 </div>
               </div>
@@ -182,10 +207,13 @@ export default function AccountPage() {
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a href="#" className="nav-link logout">
+                    <button
+                      className="nav-link logout"
+                      onClick={handleLogout}
+                    >
                       <i className="bi bi-box-arrow-right"></i>
                       <span>Log out</span>
-                    </a>
+                    </button>
                   </li>
                 </ul>
               </div>
@@ -332,7 +360,7 @@ export default function AccountPage() {
                             </div>
                           </div>
                           <div className="col-md-3">
-                            <div className="order-total">$2,105.90</div>
+                            <div className="order-total">ETB 2,105.90</div>
                           </div>
                         </div>
                         <div className="order-products">
@@ -404,7 +432,7 @@ export default function AccountPage() {
                                     <span className="item-qty">Qty: 1</span>
                                   </div>
                                 </div>
-                                <div className="item-price">$899.99</div>
+                                <div className="item-price">ETB 899.99</div>
                               </div>
                               <div className="order-item-detail">
                                 <div className="item-image">
@@ -423,7 +451,7 @@ export default function AccountPage() {
                                     <span className="item-qty">Qty: 2</span>
                                   </div>
                                 </div>
-                                <div className="item-price">$599.95</div>
+                                <div className="item-price">ETB 599.95</div>
                               </div>
                               <div className="order-item-detail">
                                 <div className="item-image">
@@ -442,25 +470,25 @@ export default function AccountPage() {
                                     <span className="item-qty">Qty: 1</span>
                                   </div>
                                 </div>
-                                <div className="item-price">$129.99</div>
+                                <div className="item-price">ETB 129.99</div>
                               </div>
                             </div>
                             <div className="order-summary">
                               <div className="summary-row">
                                 <span>Subtotal:</span>
-                                <span>$1,929.93</span>
+                                <span>ETB 1,929.93</span>
                               </div>
                               <div className="summary-row">
                                 <span>Shipping:</span>
-                                <span>$15.99</span>
+                                <span>ETB 15.99</span>
                               </div>
                               <div className="summary-row">
                                 <span>Tax:</span>
-                                <span>$159.98</span>
+                                <span>ETB 159.98</span>
                               </div>
                               <div className="summary-row total">
                                 <span>Total:</span>
-                                <span>$2,105.90</span>
+                                <span>ETB 2,105.90</span>
                               </div>
                             </div>
                             <div className="shipping-info">
@@ -502,7 +530,7 @@ export default function AccountPage() {
                             </div>
                           </div>
                           <div className="col-md-3">
-                            <div className="order-total">$360.75</div>
+                            <div className="order-total">ETB 360.75</div>
                           </div>
                         </div>
                         <div className="order-products">
@@ -562,25 +590,25 @@ export default function AccountPage() {
                                     <span className="item-qty">Qty: 1</span>
                                   </div>
                                 </div>
-                                <div className="item-price">$329.99</div>
+                                <div className="item-price">ETB 329.99</div>
                               </div>
                             </div>
                             <div className="order-summary">
                               <div className="summary-row">
                                 <span>Subtotal:</span>
-                                <span>$329.99</span>
+                                <span>ETB 329.99</span>
                               </div>
                               <div className="summary-row">
                                 <span>Shipping:</span>
-                                <span>$9.99</span>
+                                <span>ETB 9.99</span>
                               </div>
                               <div className="summary-row">
                                 <span>Tax:</span>
-                                <span>$20.77</span>
+                                <span>ETB 20.77</span>
                               </div>
                               <div className="summary-row total">
                                 <span>Total:</span>
-                                <span>$360.75</span>
+                                <span>ETB 360.75</span>
                               </div>
                             </div>
                             <div className="shipping-info">
@@ -622,7 +650,7 @@ export default function AccountPage() {
                             </div>
                           </div>
                           <div className="col-md-3">
-                            <div className="order-total">$4,268.00</div>
+                            <div className="order-total">ETB 4,268.00</div>
                           </div>
                         </div>
                         <div className="order-products">
@@ -695,7 +723,7 @@ export default function AccountPage() {
                                     <span className="item-qty">Qty: 2</span>
                                   </div>
                                 </div>
-                                <div className="item-price">$1,299.99</div>
+                                <div className="item-price">ETB 1,299.99</div>
                               </div>
                               <div className="order-item-detail">
                                 <div className="item-image">
@@ -714,7 +742,7 @@ export default function AccountPage() {
                                     <span className="item-qty">Qty: 1</span>
                                   </div>
                                 </div>
-                                <div className="item-price">$799.99</div>
+                                <div className="item-price">ETB 799.99</div>
                               </div>
                               <div className="order-item-detail">
                                 <div className="item-image">
@@ -733,7 +761,7 @@ export default function AccountPage() {
                                     <span className="item-qty">Qty: 3</span>
                                   </div>
                                 </div>
-                                <div className="item-price">$449.99</div>
+                                <div className="item-price">ETB 449.99</div>
                               </div>
                               <div className="order-item-detail">
                                 <div className="item-image">
@@ -752,25 +780,25 @@ export default function AccountPage() {
                                     <span className="item-qty">Qty: 1</span>
                                   </div>
                                 </div>
-                                <div className="item-price">$249.99</div>
+                                <div className="item-price">ETB 249.99</div>
                               </div>
                             </div>
                             <div className="order-summary">
                               <div className="summary-row">
                                 <span>Subtotal:</span>
-                                <span>$3,899.94</span>
+                                <span>ETB 3,899.94</span>
                               </div>
                               <div className="summary-row">
                                 <span>Shipping:</span>
-                                <span>$29.99</span>
+                                <span>ETB 29.99</span>
                               </div>
                               <div className="summary-row">
                                 <span>Tax:</span>
-                                <span>$338.07</span>
+                                <span>ETB 338.07</span>
                               </div>
                               <div className="summary-row total">
                                 <span>Total:</span>
-                                <span>$4,268.00</span>
+                                <span>ETB 4,268.00</span>
                               </div>
                             </div>
                             <div className="shipping-info">
@@ -812,7 +840,7 @@ export default function AccountPage() {
                             </div>
                           </div>
                           <div className="col-md-3">
-                            <div className="order-total">$987.50</div>
+                            <div className="order-total">ETB 987.50</div>
                           </div>
                         </div>
                         <div className="order-products">
@@ -878,7 +906,7 @@ export default function AccountPage() {
                                     <span className="item-qty">Qty: 1</span>
                                   </div>
                                 </div>
-                                <div className="item-price">$499.99</div>
+                                <div className="item-price">ETB 499.99</div>
                               </div>
                               <div className="order-item-detail">
                                 <div className="item-image">
@@ -897,25 +925,25 @@ export default function AccountPage() {
                                     <span className="item-qty">Qty: 1</span>
                                   </div>
                                 </div>
-                                <div className="item-price">$399.99</div>
+                                <div className="item-price">ETB 399.99</div>
                               </div>
                             </div>
                             <div className="order-summary">
                               <div className="summary-row">
                                 <span>Subtotal:</span>
-                                <span>$899.98</span>
+                                <span>ETB 899.98</span>
                               </div>
                               <div className="summary-row">
                                 <span>Shipping:</span>
-                                <span>$12.99</span>
+                                <span>ETB 12.99</span>
                               </div>
                               <div className="summary-row">
                                 <span>Tax:</span>
-                                <span>$74.53</span>
+                                <span>ETB 74.53</span>
                               </div>
                               <div className="summary-row total">
                                 <span>Total:</span>
-                                <span>$987.50</span>
+                                <span>ETB 987.50</span>
                               </div>
                             </div>
                             <div className="shipping-info">
@@ -957,7 +985,7 @@ export default function AccountPage() {
                             </div>
                           </div>
                           <div className="col-md-3">
-                            <div className="order-total">$53.00</div>
+                            <div className="order-total">ETB 53.00</div>
                           </div>
                         </div>
                         <div className="order-products">
@@ -1017,25 +1045,25 @@ export default function AccountPage() {
                                     <span className="item-qty">Qty: 1</span>
                                   </div>
                                 </div>
-                                <div className="item-price">$49.99</div>
+                                <div className="item-price">ETB 49.99</div>
                               </div>
                             </div>
                             <div className="order-summary">
                               <div className="summary-row">
                                 <span>Subtotal:</span>
-                                <span>$49.99</span>
+                                <span>ETB 49.99</span>
                               </div>
                               <div className="summary-row">
                                 <span>Shipping:</span>
-                                <span>$0.00</span>
+                                <span>ETB 0.00</span>
                               </div>
                               <div className="summary-row">
                                 <span>Tax:</span>
-                                <span>$3.01</span>
+                                <span>ETB 3.01</span>
                               </div>
                               <div className="summary-row total">
                                 <span>Total:</span>
-                                <span>$53.00</span>
+                                <span>ETB 53.00</span>
                               </div>
                             </div>
                             <div className="shipping-info">
@@ -1077,7 +1105,7 @@ export default function AccountPage() {
                             </div>
                           </div>
                           <div className="col-md-3">
-                            <div className="order-total">$1,029.50</div>
+                            <div className="order-total">ETB 1,029.50</div>
                           </div>
                         </div>
                         <div className="order-products">
@@ -1143,7 +1171,7 @@ export default function AccountPage() {
                                     <span className="item-qty">Qty: 1</span>
                                   </div>
                                 </div>
-                                <div className="item-price">$599.99</div>
+                                <div className="item-price">ETB 599.99</div>
                               </div>
                               <div className="order-item-detail">
                                 <div className="item-image">
@@ -1162,25 +1190,25 @@ export default function AccountPage() {
                                     <span className="item-qty">Qty: 1</span>
                                   </div>
                                 </div>
-                                <div className="item-price">$349.99</div>
+                                <div className="item-price">ETB 349.99</div>
                               </div>
                             </div>
                             <div className="order-summary">
                               <div className="summary-row">
                                 <span>Subtotal:</span>
-                                <span>$949.98</span>
+                                <span>ETB 949.98</span>
                               </div>
                               <div className="summary-row">
                                 <span>Shipping:</span>
-                                <span>$0.00</span>
+                                <span>ETB 0.00</span>
                               </div>
                               <div className="summary-row">
                                 <span>Tax:</span>
-                                <span>$79.52</span>
+                                <span>ETB 79.52</span>
                               </div>
                               <div className="summary-row total">
                                 <span>Total:</span>
-                                <span>$1,029.50</span>
+                                <span>ETB 1,029.50</span>
                               </div>
                             </div>
                             <div className="shipping-info">
@@ -1274,7 +1302,7 @@ export default function AccountPage() {
                           </div>
                           <div className="wishlist-content">
                             <h5>Lorem ipsum dolor sit amet</h5>
-                            <div className="product-price">$129.99</div>
+                            <div className="product-price">ETB 129.99</div>
                             <button className="btn btn-add-cart">
                               Add to cart
                             </button>
@@ -1302,7 +1330,7 @@ export default function AccountPage() {
                           </div>
                           <div className="wishlist-content">
                             <h5>Consectetur adipiscing elit</h5>
-                            <div className="product-price">$89.50</div>
+                            <div className="product-price">ETB 89.50</div>
                             <button className="btn btn-add-cart">
                               Add to cart
                             </button>
@@ -1330,7 +1358,7 @@ export default function AccountPage() {
                           </div>
                           <div className="wishlist-content">
                             <h5>Sed do eiusmod tempor</h5>
-                            <div className="product-price">$199.99</div>
+                            <div className="product-price">ETB 199.99</div>
                             <button className="btn btn-add-cart">
                               Add to cart
                             </button>

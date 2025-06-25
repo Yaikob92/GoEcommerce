@@ -544,7 +544,7 @@ export default function CheckoutPage() {
                         </p>
                         <div className="order-item-price">
                           <span className="quantity">1 x</span>
-                          <span className="price">$89.99</span>
+                          <span className="price">ETB 89.99</span>
                         </div>
                       </div>
                     </div>
@@ -564,7 +564,7 @@ export default function CheckoutPage() {
                         </p>
                         <div className="order-item-price">
                           <span className="quantity">2 x</span>
-                          <span className="price">$59.99</span>
+                          <span className="price">ETB 59.99</span>
                         </div>
                       </div>
                     </div>
@@ -573,19 +573,19 @@ export default function CheckoutPage() {
                   <div className="order-totals">
                     <div className="order-subtotal d-flex justify-content-between">
                       <span>Subtotal</span>
-                      <span>$209.97</span>
+                      <span>ETB 209.97</span>
                     </div>
                     <div className="order-shipping d-flex justify-content-between">
                       <span>Shipping</span>
-                      <span>$9.99</span>
+                      <span>ETB 9.99</span>
                     </div>
                     <div className="order-tax d-flex justify-content-between">
                       <span>Tax</span>
-                      <span>$21.00</span>
+                      <span>ETB 21.00</span>
                     </div>
                     <div className="order-total d-flex justify-content-between">
                       <span>Total</span>
-                      <span>$240.96</span>
+                      <span>ETB 240.96</span>
                     </div>
                   </div>
 

@@ -119,8 +119,8 @@ export default async function ProductDetailPage({
                 {/* Product Price */}
                 <div className="product-price-container">
                   <div className="price-wrapper">
-                    <span className="current-price">$249.99</span>
-                    <span className="original-price">$299.99</span>
+                    <span className="current-price">ETB 249.99</span>
+                    <span className="original-price">ETB 299.99</span>
                   </div>
                   <span className="discount-badge">Save 17%</span>
                   <div className="stock-info">
@@ -173,7 +173,7 @@ export default async function ProductDetailPage({
                     <i className="bi bi-truck"></i>
                     <div>
                       <h6>Free Shipping</h6>
-                      <p>On orders over $50</p>
+                      <p>On orders over ETB 50</p>
                     </div>
                   </div>
                   <div className="delivery-option">
@@ -209,7 +209,7 @@ export default async function ProductDetailPage({
                     <h5 className="product-title">
                       Lorem Ipsum Wireless Headphones
                     </h5>
-                    <div className="product-price">$249.99</div>
+                    <div className="product-price">ETB 249.99</div>
                   </div>
                 </div>
                 <div className="sticky-actions">

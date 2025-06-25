@@ -185,9 +185,9 @@ export default function AdminOrderDetailsPage() {
                   {order.items?.map((item) => (
                     <tr key={item.id}>
                       <td style={{ fontWeight: 500 }}>{item.product_name}</td>
-                      <td>${item.price?.toLocaleString()}</td>
+                      <td>ETB ${item.price?.toLocaleString()}</td>
                       <td>{item.quantity}</td>
-                      <td className="text-end" style={{ fontWeight: 600 }}>${item.total?.toLocaleString()}</td>
+                      <td className="text-end" style={{ fontWeight: 600 }}>ETB ${item.total?.toLocaleString()}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -322,19 +322,19 @@ export default function AdminOrderDetailsPage() {
             <div className="admin-card-body">
               <div className="d-flex justify-content-between mb-2" style={{ fontSize: 14 }}>
                 <span style={{ color: "#64748b" }}>Subtotal</span>
-                <span>${order.subtotal?.toLocaleString()}</span>
+                <span>ETB ${order.subtotal?.toLocaleString()}</span>
               </div>
               <div className="d-flex justify-content-between mb-2" style={{ fontSize: 14 }}>
                 <span style={{ color: "#64748b" }}>Tax</span>
-                <span>${order.tax?.toLocaleString()}</span>
+                <span>ETB ${order.tax?.toLocaleString()}</span>
               </div>
               <div className="d-flex justify-content-between mb-3" style={{ fontSize: 14 }}>
                 <span style={{ color: "#64748b" }}>Shipping</span>
-                <span>${order.shipping_cost?.toLocaleString()}</span>
+                <span>ETB ${order.shipping_cost?.toLocaleString()}</span>
               </div>
               <div className="d-flex justify-content-between pt-2" style={{ borderTop: "1px solid #e9ecef", fontWeight: 700, fontSize: 16 }}>
                 <span>Grand Total</span>
-                <span style={{ color: "#8c0d4f" }}>${order.total?.toLocaleString()}</span>
+                <span style={{ color: "#8c0d4f" }}>ETB ${order.total?.toLocaleString()}</span>
               </div>
             </div>
           </div>

@@ -51,7 +51,7 @@ export default function Home() {
                           </div>
                           <div className="product-info">
                             <h4>Modern Style</h4>
-                            <span className="price">$79.99</span>
+                            <span className="price">ETB 79.99</span>
                           </div>
                         </div>
                         <div className="product-item" data-aos="fade-up" data-aos-delay="400">
@@ -60,7 +60,7 @@ export default function Home() {
                           </div>
                           <div className="product-info">
                             <h4>Casual Collection</h4>
-                            <span className="price">$64.99</span>
+                            <span className="price">ETB 64.99</span>
                           </div>
                         </div>
                         <div className="product-item" data-aos="fade-up" data-aos-delay="500">
@@ -69,7 +69,7 @@ export default function Home() {
                           </div>
                           <div className="product-info">
                             <h4>Premium Design</h4>
-                            <span className="price">$89.99</span>
+                            <span className="price">ETB 89.99</span>
                           </div>
                         </div>
                         <div className="product-item" data-aos="fade-up" data-aos-delay="600">
@@ -78,7 +78,7 @@ export default function Home() {
                           </div>
                           <div className="product-info">
                             <h4>Elegant Series</h4>
-                            <span className="price">$74.99</span>
+                            <span className="price">ETB 74.99</span>
                           </div>
                         </div>
                       </div>
@@ -495,7 +495,7 @@ export default function Home() {
                     <a href="#">Tempor Incididunt</a>
                   </h4>
                   <div className="product-meta">
-                    <div className="product-price">$129.00</div>
+                    <div className="product-price">ETB 129.00</div>
                     <div className="product-rating">
                       <i className="bi bi-star-fill"></i>
                       4.8 <span>(42)</span>
@@ -529,7 +529,7 @@ export default function Home() {
                     <a href="#">Elit Consectetur</a>
                   </h4>
                   <div className="product-meta">
-                    <div className="product-price">$95.00</div>
+                    <div className="product-price">ETB 95.00</div>
                     <div className="product-rating">
                       <i className="bi bi-star-fill"></i>
                       4.6 <span>(28)</span>
@@ -564,8 +564,8 @@ export default function Home() {
                   </h4>
                   <div className="product-meta">
                     <div className="product-price">
-                      $75.00
-                      <span className="original-price">$99.00</span>
+                      ETB 75.00
+                      <span className="original-price">ETB 99.00</span>
                     </div>
                     <div className="product-rating">
                       <i className="bi bi-star-fill"></i>
@@ -599,7 +599,7 @@ export default function Home() {
                     <a href="#">Labore Dolore</a>
                   </h4>
                   <div className="product-meta">
-                    <div className="product-price">$145.00</div>
+                    <div className="product-price">ETB 145.00</div>
                     <div className="product-rating">
                       <i className="bi bi-star-fill"></i>
                       4.7 <span>(35)</span>
@@ -632,7 +632,7 @@ export default function Home() {
                     <a href="#">Magna Aliqua</a>
                   </h4>
                   <div className="product-meta">
-                    <div className="product-price">$89.00</div>
+                    <div className="product-price">ETB 89.00</div>
                     <div className="product-rating">
                       <i className="bi bi-star-fill"></i>
                       4.5 <span>(23)</span>
@@ -667,8 +667,8 @@ export default function Home() {
                   </h4>
                   <div className="product-meta">
                     <div className="product-price">
-                      $110.00
-                      <span className="original-price">$129.00</span>
+                      ETB 110.00
+                      <span className="original-price">ETB 129.00</span>
                     </div>
                     <div className="product-rating">
                       <i className="bi bi-star-fill"></i>
@@ -702,7 +702,7 @@ export default function Home() {
                     <a href="#">Incididunt Labore</a>
                   </h4>
                   <div className="product-meta">
-                    <div className="product-price">$55.00</div>
+                    <div className="product-price">ETB 55.00</div>
                     <div className="product-rating">
                       <i className="bi bi-star-fill"></i>
                       4.6 <span>(31)</span>
@@ -736,7 +736,7 @@ export default function Home() {
                     <a href="#">Aliqua Magna</a>
                   </h4>
                   <div className="product-meta">
-                    <div className="product-price">$79.00</div>
+                    <div className="product-price">ETB 79.00</div>
                     <div className="product-rating">
                       <i className="bi bi-star-fill"></i>
                       4.7 <span>(39)</span>
@@ -805,8 +805,8 @@ export default function Home() {
                     <Link href="/product/1">Lorem ipsum dolor sit amet</Link>
                   </h5>
                   <div className="product-price">
-                    <span className="current-price">$89.99</span>
-                    <span className="old-price">$129.99</span>
+                    <span className="current-price">ETB 89.99</span>
+                    <span className="old-price">ETB 129.99</span>
                   </div>
                   <div className="product-rating">
                     <i className="bi bi-star-fill"></i>
@@ -849,7 +849,7 @@ export default function Home() {
                     <Link href="/product/2">Consectetur adipiscing elit</Link>
                   </h5>
                   <div className="product-price">
-                    <span className="current-price">$249.99</span>
+                    <span className="current-price">ETB 249.99</span>
                   </div>
                   <div className="product-rating">
                     <i className="bi bi-star-fill"></i>
@@ -893,7 +893,7 @@ export default function Home() {
                     <Link href="/product/3">Sed do eiusmod tempor</Link>
                   </h5>
                   <div className="product-price">
-                    <span className="current-price">$59.99</span>
+                    <span className="current-price">ETB 59.99</span>
                   </div>
                   <div className="product-rating">
                     <i className="bi bi-star-fill"></i>
@@ -936,8 +936,8 @@ export default function Home() {
                     <Link href="/product/4">Incididunt ut labore et dolore</Link>
                   </h5>
                   <div className="product-price">
-                    <span className="current-price">$79.99</span>
-                    <span className="old-price">$99.99</span>
+                    <span className="current-price">ETB 79.99</span>
+                    <span className="old-price">ETB 99.99</span>
                   </div>
                   <div className="product-rating">
                     <i className="bi bi-star-fill"></i>
@@ -981,8 +981,8 @@ export default function Home() {
                     <Link href="/product/5">Magna aliqua ut enim ad minim</Link>
                   </h5>
                   <div className="product-price">
-                    <span className="current-price">$199.99</span>
-                    <span className="old-price">$249.99</span>
+                    <span className="current-price">ETB 199.99</span>
+                    <span className="old-price">ETB 249.99</span>
                   </div>
                   <div className="product-rating">
                     <i className="bi bi-star-fill"></i>
@@ -1025,7 +1025,7 @@ export default function Home() {
                     <Link href="/product/6">Veniam quis nostrud exercitation</Link>
                   </h5>
                   <div className="product-price">
-                    <span className="current-price">$45.99</span>
+                    <span className="current-price">ETB 45.99</span>
                   </div>
                   <div className="product-rating">
                     <i className="bi bi-star-fill"></i>
@@ -1069,7 +1069,7 @@ export default function Home() {
                     <Link href="/product/7">Ullamco laboris nisi ut aliquip</Link>
                   </h5>
                   <div className="product-price">
-                    <span className="current-price">$69.99</span>
+                    <span className="current-price">ETB 69.99</span>
                   </div>
                   <div className="product-rating">
                     <i className="bi bi-star-fill"></i>
@@ -1112,7 +1112,7 @@ export default function Home() {
                     <Link href="/product/8">Ex ea commodo consequat</Link>
                   </h5>
                   <div className="product-price">
-                    <span className="current-price">$159.99</span>
+                    <span className="current-price">ETB 159.99</span>
                   </div>
                   <div className="product-rating">
                     <i className="bi bi-star-fill"></i>

@@ -4,7 +4,7 @@ const products = [
   {
     id: 1,
     name: "Summer Floral Dress",
-    price: "$149.99",
+    price: "ETB 149.99",
     image: "/img/product/product-1.webp",
     label: "New Season",
     rating: 4.0,
@@ -12,7 +12,7 @@ const products = [
   {
     id: 2,
     name: "Classic Leather Jacket",
-    price: "$199.99",
+    price: "ETB 199.99",
     image: "/img/product/product-2.webp",
     label: "New Season",
     rating: 5.0,
@@ -20,7 +20,7 @@ const products = [
   {
     id: 3,
     name: "Casual Denim Jeans",
-    price: "$89.99",
+    price: "ETB 89.99",
     image: "/img/product/product-3.webp",
     label: "New Season",
     rating: 3.0,
@@ -28,7 +28,7 @@ const products = [
   {
     id: 4,
     name: "Elegant Silk Blouse",
-    price: "$129.99",
+    price: "ETB 129.99",
     image: "/img/product/product-4.webp",
     label: "New Season",
     rating: 4.0,
@@ -97,8 +97,8 @@ export default function StorePage() {
                 <h3 className="widget-title">Price Range</h3>
                 <div className="price-range-container">
                   <div className="current-range mb-3">
-                    <span className="min-price">$0</span>
-                    <span className="max-price float-end">$1000</span>
+                    <span className="min-price">ETB 0</span>
+                    <span className="max-price float-end">ETB 1000</span>
                   </div>
                   <div className="range-slider">
                     <div className="slider-track"></div>
@@ -258,11 +258,11 @@ export default function StorePage() {
                           id="priceRange"
                         >
                           <option>All Prices</option>
-                          <option>Under $25</option>
-                          <option>$25 to $50</option>
-                          <option>$50 to $100</option>
-                          <option>$100 to $200</option>
-                          <option>$200 &amp; Above</option>
+                          <option>Under ETB 25</option>
+                          <option>ETB 25 to ETB 50</option>
+                          <option>ETB 50 to ETB 100</option>
+                          <option>ETB 100 to ETB 200</option>
+                          <option>ETB 200 &amp; Above</option>
                         </select>
                       </div>
                     </div>

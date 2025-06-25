@@ -1,6 +1,52 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function LoginPage() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const { login, isAuthenticated, isLoading } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!isLoading && isAuthenticated) {
+      router.push("/");
+    }
+  }, [isAuthenticated, isLoading, router]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+    setLoading(true);
+
+    try {
+      await login(email, password);
+      router.push("/");
+    } catch (err: unknown) {
+      const apiErr = err as { message?: string; error?: { code?: string } };
+      const code = apiErr?.error?.code;
+
+      if (code === "EMAIL_NOT_VERIFIED") {
+        setError("Please verify your email before logging in. Check your inbox for the verification link.");
+      } else if (code === "ACCOUNT_LOCKED") {
+        setError("Account locked due to too many failed attempts. Try again in 15 minutes.");
+      } else if (code === "INVALID_CREDENTIALS") {
+        setError("Invalid email or password.");
+      } else {
+        setError(apiErr?.message || "Login failed. Please try again.");
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (isLoading) return null;
+
   return (
     <>
       {/* Page Title */}
@@ -28,19 +74,27 @@ export default function LoginPage() {
                   <h2>Login</h2>
                   <p>Welcome back! Please enter your details</p>
                 </div>
-                <form method="POST" action="#">
+
+                {error && (
+                  <div className="alert alert-danger" role="alert">
+                    {error}
+                  </div>
+                )}
+
+                <form onSubmit={handleSubmit}>
                   <div className="mb-4">
                     <label htmlFor="email" className="form-label">
                       Email
                     </label>
                     <input
                       type="email"
-                      name="email"
                       className="form-control"
                       id="email"
                       placeholder="Enter your email"
                       required
                       autoComplete="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
 
@@ -49,18 +103,19 @@ export default function LoginPage() {
                       <label htmlFor="password" className="form-label">
                         Password
                       </label>
-                      <a href="#" className="forgot-link">
+                      <Link href="/forgot-password" className="forgot-link">
                         Forgot password?
-                      </a>
+                      </Link>
                     </div>
                     <input
                       type="password"
                       className="form-control"
-                      name="password"
                       id="password"
                       placeholder="Enter your password"
                       required
                       autoComplete="current-password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                     />
                   </div>
 
@@ -72,8 +127,19 @@ export default function LoginPage() {
                   </div>
 
                   <div className="d-grid gap-2 mb-4">
-                    <button type="submit" className="btn btn-primary">
-                      Sign in
+                    <button
+                      type="submit"
+                      className="btn btn-primary"
+                      disabled={loading}
+                    >
+                      {loading ? (
+                        <>
+                          <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                          Signing in...
+                        </>
+                      ) : (
+                        "Sign in"
+                      )}
                     </button>
                     <button type="button" className="btn btn-outline">
                       <i className="bi bi-google me-2"></i>Sign in with Google

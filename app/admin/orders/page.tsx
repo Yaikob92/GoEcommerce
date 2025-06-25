@@ -87,7 +87,7 @@ export default function AdminOrdersPage() {
     { key: "order_number", label: "Order ID", render: (item) => <span style={{ fontWeight: 500 }}>#{item.order_number}</span> },
     { key: "customer_name", label: "Customer" },
     { key: "items_count", label: "Items", render: (item) => <span>{item.items_count ?? 0} items</span> },
-    { key: "total", label: "Total", render: (item) => <span style={{ fontWeight: 600 }}>${item.total?.toLocaleString()}</span> },
+    { key: "total", label: "Total", render: (item) => <span style={{ fontWeight: 600 }}>ETB ${item.total?.toLocaleString()}</span> },
     { key: "payment_status", label: "Payment", render: (item) => getStatusBadge(item.payment_status) },
     { key: "status", label: "Status", render: (item) => getStatusBadge(item.status) },
     { key: "created_at", label: "Date", render: (item) => <span style={{ fontSize: 13, color: "#64748b" }}>{new Date(item.created_at).toLocaleDateString()}</span> },

@@ -100,7 +100,7 @@ export default function AdminCustomersPage() {
     { key: "email", label: "Email" },
     { key: "phone", label: "Phone", render: (item) => <span>{item.phone || "-"}</span> },
     { key: "orders_count", label: "Orders", render: (item) => <span>{item.orders_count ?? 0}</span> },
-    { key: "total_spent", label: "Total Spent", render: (item) => <span style={{ fontWeight: 600 }}>${item.total_spent?.toLocaleString()}</span> },
+    { key: "total_spent", label: "Total Spent", render: (item) => <span style={{ fontWeight: 600 }}>ETB ${item.total_spent?.toLocaleString()}</span> },
     { key: "created_at", label: "Joined", render: (item) => <span style={{ fontSize: 13, color: "#64748b" }}>{new Date(item.created_at).toLocaleDateString()}</span> },
     {
       key: "actions",

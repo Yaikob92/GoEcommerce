@@ -66,19 +66,19 @@ export default function OrderConfirmationPage() {
                     <ul className="summary-list">
                       <li>
                         <span>Subtotal</span>
-                        <span>$219.97</span>
+                        <span>ETB 219.97</span>
                       </li>
                       <li>
                         <span>Shipping</span>
-                        <span>$0.00</span>
+                        <span>ETB 0.00</span>
                       </li>
                       <li>
                         <span>Tax</span>
-                        <span>$18.70</span>
+                        <span>ETB 18.70</span>
                       </li>
                       <li className="total">
                         <span>Total</span>
-                        <span>$238.67</span>
+                        <span>ETB 238.67</span>
                       </li>
                     </ul>
                   </div>
@@ -217,7 +217,7 @@ export default function OrderConfirmationPage() {
                         </div>
                         <div className="item-price">
                           <span className="quantity">1 ×</span>
-                          <span className="price">$129.99</span>
+                          <span className="price">ETB 129.99</span>
                         </div>
                       </div>
                     </div>
@@ -238,7 +238,7 @@ export default function OrderConfirmationPage() {
                         </div>
                         <div className="item-price">
                           <span className="quantity">1 ×</span>
-                          <span className="price">$89.98</span>
+                          <span className="price">ETB 89.98</span>
                         </div>
                       </div>
                     </div>
@@ -277,7 +277,7 @@ export default function OrderConfirmationPage() {
                           />
                         </div>
                         <h5>Wireless Earbuds</h5>
-                        <div className="product-price">$59.99</div>
+                        <div className="product-price">ETB 59.99</div>
                         <a href="#" className="btn btn-add-cart">
                           <i className="bi bi-plus"></i>
                           Add to Cart
@@ -294,7 +294,7 @@ export default function OrderConfirmationPage() {
                           />
                         </div>
                         <h5>Portable Phone Charger</h5>
-                        <div className="product-price">$34.99</div>
+                        <div className="product-price">ETB 34.99</div>
                         <a href="#" className="btn btn-add-cart">
                           <i className="bi bi-plus"></i>
                           Add to Cart
@@ -311,7 +311,7 @@ export default function OrderConfirmationPage() {
                           />
                         </div>
                         <h5>Smart Watch</h5>
-                        <div className="product-price">$149.99</div>
+                        <div className="product-price">ETB 149.99</div>
                         <a href="#" className="btn btn-add-cart">
                           <i className="bi bi-plus"></i>
                           Add to Cart

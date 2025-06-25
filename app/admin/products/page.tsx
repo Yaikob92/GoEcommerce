@@ -138,7 +138,7 @@ export default function AdminProductsPage() {
     },
     { key: "name", label: "Name", render: (item) => <span style={{ fontWeight: 500 }}>{item.name}</span> },
     { key: "category_name", label: "Category", render: (item) => item.category_name || "-" },
-    { key: "price", label: "Price", render: (item) => <span style={{ fontWeight: 600 }}>${item.price?.toLocaleString()}</span> },
+    { key: "price", label: "Price", render: (item) => <span style={{ fontWeight: 600 }}>ETB ${item.price?.toLocaleString()}</span> },
     { key: "stock", label: "Stock", render: (item) => <span>{item.stock}</span> },
     { key: "status", label: "Status", render: (item) => getStatusBadge(getStockStatus(item.stock)) },
     { key: "created_at", label: "Created", render: (item) => <span style={{ fontSize: 13, color: "#64748b" }}>{new Date(item.created_at).toLocaleDateString()}</span> },

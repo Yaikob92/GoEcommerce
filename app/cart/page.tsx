@@ -70,7 +70,7 @@ export default function CartPage() {
                     </div>
                     <div className="col-lg-2 col-12 mt-3 mt-lg-0 text-center">
                       <div className="price-tag">
-                        <span className="current-price">$129.00</span>
+                        <span className="current-price">ETB 129.00</span>
                       </div>
                     </div>
                     <div className="col-lg-2 col-12 mt-3 mt-lg-0 text-center">
@@ -92,7 +92,7 @@ export default function CartPage() {
                     </div>
                     <div className="col-lg-2 col-12 mt-3 mt-lg-0 text-center">
                       <div className="item-total">
-                        <span>$258.00</span>
+                        <span>ETB 258.00</span>
                       </div>
                     </div>
                   </div>
@@ -128,7 +128,7 @@ export default function CartPage() {
                     </div>
                     <div className="col-lg-2 col-12 mt-3 mt-lg-0 text-center">
                       <div className="price-tag">
-                        <span className="current-price">$95.00</span>
+                        <span className="current-price">ETB 95.00</span>
                       </div>
                     </div>
                     <div className="col-lg-2 col-12 mt-3 mt-lg-0 text-center">
@@ -150,7 +150,7 @@ export default function CartPage() {
                     </div>
                     <div className="col-lg-2 col-12 mt-3 mt-lg-0 text-center">
                       <div className="item-total">
-                        <span>$95.00</span>
+                        <span>ETB 95.00</span>
                       </div>
                     </div>
                   </div>
@@ -192,7 +192,7 @@ export default function CartPage() {
 
                 <div className="summary-item">
                   <span className="summary-label">Subtotal</span>
-                  <span className="summary-value">$353.00</span>
+                  <span className="summary-value">ETB 353.00</span>
                 </div>
 
                 <div className="summary-item shipping-item">
@@ -207,7 +207,7 @@ export default function CartPage() {
                         defaultChecked
                       />
                       <label className="form-check-label" htmlFor="standard">
-                        Standard Delivery - $4.99
+                        Standard Delivery - ETB 4.99
                       </label>
                     </div>
                     <div className="form-check text-end">
@@ -218,7 +218,7 @@ export default function CartPage() {
                         id="express"
                       />
                       <label className="form-check-label" htmlFor="express">
-                        Express Delivery - $12.99
+                        Express Delivery - ETB 12.99
                       </label>
                     </div>
                     <div className="form-check text-end">
@@ -229,7 +229,7 @@ export default function CartPage() {
                         id="free"
                       />
                       <label className="form-check-label" htmlFor="free">
-                        Free Shipping (Orders over $300)
+                        Free Shipping (Orders over ETB 300)
                       </label>
                     </div>
                   </div>
@@ -237,17 +237,17 @@ export default function CartPage() {
 
                 <div className="summary-item">
                   <span className="summary-label">Tax</span>
-                  <span className="summary-value">$28.24</span>
+                  <span className="summary-value">ETB 28.24</span>
                 </div>
 
                 <div className="summary-item discount">
                   <span className="summary-label">Discount</span>
-                  <span className="summary-value">-$0.00</span>
+                  <span className="summary-value">-ETB 0.00</span>
                 </div>
 
                 <div className="summary-total">
                   <span className="summary-label">Grand Total</span>
-                  <span className="summary-value">$381.24</span>
+                  <span className="summary-value">ETB 381.24</span>
                 </div>
 
                 <div className="checkout-button">
