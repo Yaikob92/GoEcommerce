@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --axom-black: #080808;
+  --axom-void: #0d0d0d;
+  --axom-dark: #141414;
+  --axom-steel: #1e1e1e;
+  --axom-border: #2a2a2a;
+  --axom-muted: #5a5a5a;
+  --axom-silver: #9a9a9a;
+  --axom-cream: #f2ede4;
+  --axom-white: #fafaf8;
+  --axom-red: #e8291a;
+  --axom-red-dim: #c4221557;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--axom-black);
+  color: var(--axom-cream);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Noise texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.35;
+}
+
+/* Typography */
+.font-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--axom-black); }
+::-webkit-scrollbar-thumb { background: var(--axom-border); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--axom-muted); }
+
+/* Selection */
+::selection { background: var(--axom-red); color: var(--axom-white); }
+
+/* Utilities */
+.border-axom { border-color: var(--axom-border); }
+
+.btn-primary {
+  position: relative;
+  background: var(--axom-cream);
+  color: var(--axom-black);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  cursor: pointer;
+  border: none;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--axom-red);
+  transform: translateX(-101%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover::after { transform: translateX(0); }
+.btn-primary:hover { color: var(--axom-white); }
+.btn-primary span { position: relative; z-index: 1; }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--axom-cream);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  border: 1px solid var(--axom-border);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-ghost:hover {
+  border-color: var(--axom-cream);
+  color: var(--axom-white);
+}
+
+/* Input */
+.input-axom {
+  width: 100%;
+  background: var(--axom-steel);
+  border: 1px solid var(--axom-border);
+  color: var(--axom-cream);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  padding: 14px 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-axom::placeholder { color: var(--axom-muted); }
+.input-axom:focus { border-color: var(--axom-red); }
+
+/* Product card hover line */
+.product-card-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: var(--axom-red);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.group:hover .product-card-line { width: 100%; }
+
+/* Marquee */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 18s linear infinite; }
+
+/* Shimmer loading */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, var(--axom-steel) 25%, var(--axom-border) 50%, var(--axom-steel) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
